@@ -1,41 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { createElement } from 'react';
 export const App = () => {
 	const currentYear = new Date().getFullYear();
-	const appDiv = document.createElement('div');
-	appDiv.className = 'App';
-
-	const header = document.createElement('header');
-	header.className = 'App-header';
-
-	const image = document.createElement('img');
-	image.src = logo;
-	image.className = 'App-logo';
-	image.alt = 'logo';
-
-	const paragraph = document.createElement('p');
-	const code = document.createElement('code');
-	code.textContent = 'src/App.js';
-	paragraph.appendChild(document.createTextNode('Edit '));
-	paragraph.appendChild(code);
-	paragraph.appendChild(document.createTextNode(' and save to reload.'));
-
-	const link = document.createElement('a');
-	link.className = 'App-link';
-	link.href = 'https://reactjs.org';
-	link.target = '_blank';
-	link.rel = 'noopener noreferrer';
-	link.textContent = 'Learn React';
-
-	const yearParagraph = document.createElement('p');
-	yearParagraph.textContent = currentYear;
-
-	header.appendChild(image);
-	header.appendChild(paragraph);
-	header.appendChild(link);
-	header.appendChild(yearParagraph);
-	appDiv.appendChild(header);
-
-	return appDiv;
+	return /*#__PURE__*/ createElement(
+		'div',
+		{
+			className: 'App',
+		},
+		/*#__PURE__*/ createElement(
+			'header',
+			{
+				className: 'App',
+			},
+			/*#__PURE__*/ createElement('img', {
+				src: logo,
+				className: 'App-logo',
+				alt: 'logo',
+			}),
+			/*#__PURE__*/ createElement('p', null, 'Edit ', /*#__PURE__*/ createElement('code', null, 'src/App.js'), ' save to reload.'),
+			/*#__PURE__*/ createElement(
+				'a',
+				{
+					className: 'App-link',
+					href: 'https://reactjs.org',
+					target: '_blank',
+					rel: 'noopener',
+				},
+				'Learn React',
+			),
+			/*#__PURE__*/ createElement('p', null, currentYear),
+		),
+	);
 };
