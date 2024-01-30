@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 export const App = () => {
+	const currentYear = new Date().getFullYear(); // императивный
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -12,6 +13,7 @@ export const App = () => {
 				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
 					Learn React
 				</a>
+				<p>{currentYear} год</p>
 			</header>
 		</div>
 	);
